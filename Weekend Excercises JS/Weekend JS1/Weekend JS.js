@@ -50,8 +50,8 @@ function binToDec(array) {
 /* -------------------------------------------------------------------------- */
 /*                                Ex2.4 Unique                                */
 /* -------------------------------------------------------------------------- */
-const arr = [0,0,0,0,0,0,0]
-let unique = arr[0];
+// const arr = [0,0,0,0,0,0,0]
+// let unique = arr[0];
 if ((arr[arr.length-1] !== arr[arr.length-2]) && (arr[arr.length-1] !== arr[arr.length-3] )) {
     unique = arr[arr.length -1]
 }
@@ -65,4 +65,15 @@ for (let i = 0; i < arr.length -2; i++) {
         unique = arr[i]
     }
 }    
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Ex2.5 - Summation                             */
+/* -------------------------------------------------------------------------- */
+function summamtion(maxNum) {
+    let sum = 0;
+    for (let i = 1; i <= maxNum; i++) {
+        sum = sum +i;
+    }
+    return sum
 }
