@@ -77,3 +77,11 @@ function summamtion(maxNum) {
     }
     return sum
 }
+
+/* -------------------------------------------------------------------------- */
+/*                         // Ex5.1 - trimming string:                        */
+/* -------------------------------------------------------------------------- */
+function triming(text) {
+    text = text.slice(1, text.length -1);
+    return text;
+}
