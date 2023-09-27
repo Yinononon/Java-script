@@ -8,7 +8,7 @@ function stringDate(numDate) {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     console.log(`Today is ${daysOfWeek[numDate.getDay()]} the ${(numDate.getDate())} of ${months[numDate.getMonth()]}  ${(numDate.getFullYear())}`)
-   
+
 }
 
 stringDate(currentDate)
