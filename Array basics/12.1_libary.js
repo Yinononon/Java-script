@@ -22,7 +22,6 @@ const library = [
                 delete stat.readingStatus
             return stat
         }
-        delete stat.readingStatus
         
     }).filter(stat => stat)
-    console.log(libraryStatus)
+    
