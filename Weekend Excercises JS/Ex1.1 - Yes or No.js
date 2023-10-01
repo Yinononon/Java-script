@@ -1,4 +1,4 @@
-
+Ex1.1 - Yes or No
 const yesOrNo = {
     bool: function (Boolean) {
         if (Boolean) {

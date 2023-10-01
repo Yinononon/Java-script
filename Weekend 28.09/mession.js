@@ -110,21 +110,39 @@ const agencyOperations  = {
         }
 }
 
-// agencyOperations.transferCarBetweenAgencies('Best Deal','bmw','AZJZ4','CarMax')
-// agencyOperations.removeCar('Best Deal','bmw','AZJZ4')
-  
-// car1 = {
-//     name: "007",
-//     year: 2222,
-//     price: 1137000,
-//     carNumber: "BBBBB",
-//     ownerId: "dude",
-//   }
-// agencyOperations.updateCarPrice('Best Deal',"bmw","AZJZ4",989898);  
+/* -------------------------------------------------------------------------- */
+/*                           2. Customer Operations:                          */
+/* -------------------------------------------------------------------------- */
 
-// agencyOperations.retrieve()
-// console.log(carMarket.sellers[0].cash)
-// agencyOperations.addNewCar('CarMax','bmw',car1)
-// console.log(carMarket.sellers[0].cars[0])
-// agencyOperations.removeCar('Best Deal',"bDADA",'BBBBB')
-// console.log(carMarket.sellers[0].cars[5])
+const customerOperations = {
+    searchCustomer: nameOrId => {
+        const customer = carMarket.customers.find((customer) =>  customer.name === nameOrId || customer.id === nameOrId)
+        if(customer){
+        console.log(customer)
+        return customer
+        }
+        return console.log("customer not found plese enter a vaild agency name or agency ID")
+        },
+    retrieve: () => {
+        const allCustomers = carMarket.customers.map(({name}) => name);
+        console.log(allCustomers)
+        return allCustomers;
+        }, 
+    cahngeCash: function (customer,cash) {
+        const name = this.searchCustomer(customer)
+            if(name){
+                name.cash = cash
+                console.log(`${customer} corrent cash: ${cash}`)
+                return name.cash
+            }
+        return "Some of the ditails wrong or missing pay attantion!"
+    },
+    getCustomerTotalCarValue: function (customer) {
+        const customerCarValue = carMarket.customers.map(({name,cars}) => ({name: name, cars: cars.length}))
+        return customerCarValue
+    }   
+}
+
+// console.log(customerOperations.searchCustomer("BGzHhjnE8"))
+// customerOperations.retrieve()
+console.log(customerOperations.getCustomerTotalCarValue())
